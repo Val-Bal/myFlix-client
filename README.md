@@ -33,4 +33,4 @@ This project involves building the client-side of an app called IndieFlix based 
 
 # API Used
 
-The REST API built in the previous Achievement (Achievement 2) is used to access movie data.
+REST API 
