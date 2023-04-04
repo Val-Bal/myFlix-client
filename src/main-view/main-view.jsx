@@ -24,10 +24,6 @@ export const MainView = () => {
         setMovies(movies);
       });
   }, [token]);
-
-  if (!token) {
-    return <LoginView />;
-  }
   
   if (selectedMovie) {
     return (
@@ -52,6 +48,20 @@ export const MainView = () => {
       </div>
     );
   }
+  
+  if (!user) {
+    return (
+      <>
+        <LoginView onLoggedIn={(user, token) => {
+          setUser(user);
+          setToken(token);
+        }} />
+        or
+        <SignupView />
+      </>
+    );
+  }
+
 };
 
 <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
