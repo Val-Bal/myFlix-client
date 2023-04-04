@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
@@ -6,29 +6,25 @@ import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
-
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("https://indieflix.herokuapp.com/movies")
+    if (!token) {
+      return;
+    }
+    fetch("https://indieflix.herokuapp.com/movies", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then((response) => response.json())
       .then((data) => {
-        const moviesFromApi = data.map((doc) => {
-          return {
-            id: doc._id,
-            title: doc.Title,
-            image: doc.ImagePath,
-            description: doc.Description,
-            genre: doc.Genre.Name,
-            director: doc.Director.Name,
-          };
-        });
-
-        setMovies(moviesFromApi);
+        console.log(data);
       });
-  }, []);
+  }, [token]);
 
-
+  if (!token) {
+    return <LoginView />;
+  }
   
   if (selectedMovie) {
     return (
@@ -54,3 +50,5 @@ export const MainView = () => {
     );
   }
 };
+
+<button onClick={() => { setUser(null); }}>Logout</button>
