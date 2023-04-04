@@ -13,9 +13,12 @@ export const MainView = () => {
       .then((data) => {
         const moviesFromApi = data.docs.map((doc) => {
           return {
-            id: doc.key,
-            title: doc.title,
-            author: doc.director_name?.[0]
+            id: doc._id,
+            title: doc.Title,
+            image: doc.ImagePath,
+            description: doc.Description,
+            genre: doc.Genre.Name,
+            director: doc.Director.Name,
           };
         });
 
@@ -23,6 +26,8 @@ export const MainView = () => {
       });
   }, []);
 
+
+  
   if (selectedMovie) {
     return (
       <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
