@@ -5,6 +5,9 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedToken = localStorage.getItem("token");
+  const [token, setToken] = useState(storedToken? storedToken : null);
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [user, setUser] = useState(null);
@@ -17,8 +20,8 @@ export const MainView = () => {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+      .then((movies) => {
+        setMovies(movies);
       });
   }, [token]);
 
@@ -51,4 +54,4 @@ export const MainView = () => {
   }
 };
 
-<button onClick={() => { setUser(null); }}>Logout</button>
+<button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
