@@ -31,25 +31,7 @@ export const MainView = () => {
     );
   }
 
-  if (movies.length === 0) {
-    return <div>The list is empty!</div>;
-  } else {
-    return (
-      <div>
-        {movies.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            movie={movie}
-            onMovieClick={(newSelectedMovie) => {
-              setSelectedMovie(newSelectedMovie);
-            }}
-          />
-        ))}
-      </div>
-    );
-  }
-  
-  if (!user) {
+  if (!token) {
     return (
       <>
         <LoginView onLoggedIn={(user, token) => {
@@ -62,6 +44,23 @@ export const MainView = () => {
     );
   }
 
-};
+  if (movies.length === 0) {
+    return <div>The list is empty!</div>;
+  } else {
+    return (
+      <div>
+        <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
+        {movies.map((movie) => (
+          <MovieCard
+            key={movie._id}
+            movie={movie}
+            onMovieClick={(newSelectedMovie) => {
+              setSelectedMovie(newSelectedMovie);
+            }}
+          />
+        ))}
+      </div>
+    );
+  }
 
-<button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
+};
