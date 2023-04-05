@@ -13,11 +13,11 @@ import { useState } from "react";
      const data = {
        Username: username,
        Password: password,
-       Emial: email,
+       Email: email,
        Birthday: birthday
      };
      
-     fetch ("https://indieflix.herokuapp.com/signup", {
+     fetch ("https://indieflix.herokuapp.com/users", {
        method: "POST",
        body: JSON.stringify(data),
        headers: {
