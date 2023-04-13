@@ -40,7 +40,7 @@ import Form from "react-bootstrap/Form";
 
  return (
    <Form onSubmit={handleSubmit}>
-    <Form.Group controlId="formUsername">
+    <Form.Group controlId="loginFormUsername">
       <Form.Label>Username:</Form.Label>
       <Form.Control
         type="text"
@@ -50,7 +50,7 @@ import Form from "react-bootstrap/Form";
         minLength="3" 
       />
       </Form.Group>
-     <Form.Group controlId="formPassword">
+     <Form.Group controlId="loginFormPassword">
       <Form.Label>Password:</Form.Label>
       <Form.Control
         type="password"
