@@ -12,8 +12,8 @@ import { Container } from "react-bootstrap";
 const MyFlixApplication = () => {
   return (
     <Container>
-    <MainView />
-  </Container>
+      <MainView />
+    </Container>
 );
   };
 
