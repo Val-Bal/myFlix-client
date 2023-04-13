@@ -1,3 +1,9 @@
+$primary: SeaGreen;
+$body-bg: Honeydew;
+
+@import '~bootstrap/scss/bootstrap.scss';
+//add above after removing import "bootstrap/dist/css/bootstrap.min.css"; from src/index.jsx.
+
 $color: steelblue;
 
 .my-flix {
