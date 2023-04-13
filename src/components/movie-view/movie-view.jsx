@@ -4,7 +4,7 @@ export const MovieView = ({ movie, onBackClick }) => {
   return (
     <div>
       <div>
-        <img crossOrgin="anonymous" src={movie.ImagePath} />
+        <img crossOrigin="anonymous" src={movie.ImagePath} />
       </div>
       <div>
         <span>Title: </span>
