@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { Row, Col, Container, Card, Button } from "react-bootstrap";
-import { UpdateUser } from "./update-user";
-import { FavoriteMovies } from "./favorite-movies";
+//import { UpdateUser } from "./update-user";
+//import { FavoriteMovies } from "./favorite-movies";
 import { Link } from "react-router-dom";
 import { Button, Row, Col, Container, Form, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./profile-view.scss";
+//import "./profile-view.scss";
 
 function ProfileView ({
   movies,

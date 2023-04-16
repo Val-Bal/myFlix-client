@@ -1,7 +1,7 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./navigation-bar.scss";
+//import "./navigation-bar.scss";
 
 
 function NavigationBar ({ user, onLoggedOut }) {
