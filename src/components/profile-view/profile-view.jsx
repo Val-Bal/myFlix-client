@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Row, Col, Container, Card, Button } from "react-bootstrap";
-//import { UpdateUser } from "./update-user";
-//import { FavoriteMovies } from "./favorite-movies";
+import { UpdateUser } from "./update-user";
+import { FavoriteMovies } from "./favorite-movies";
 import { Link } from "react-router-dom";
 import { Button, Row, Col, Container, Form, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -12,7 +12,8 @@ function ProfileView ({
   removeMovie,
   user
 }) {
-
+ console.log(user);
+ 
   return (
     <Container>
       <Row>
@@ -22,7 +23,7 @@ function ProfileView ({
               <div>
                 <h4>User Information</h4>
                 <p>Username: {user.Username}</p>
-                <p>Birthday: {user.Birthday.slice(0, 10)}</p>
+                {/* <p>Birthday: {user.Birthday.slice(0, 10)}</p> */}
                 <p>e-mail: {user.Email}</p>
               </div>
             </Card.Body>
@@ -37,7 +38,7 @@ function ProfileView ({
       </Col>
       </Row>
       <Row>
-          <FavoriteMovies user={user} movies={movies} />
+          {user.FavoriteMovies && <FavoriteMovies user={user} movies={movies}></FavoriteMovies> }
       </Row>
       <Row>
          <div>
