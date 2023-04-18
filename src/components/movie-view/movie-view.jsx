@@ -24,9 +24,10 @@ export const MovieView = ({ movies }) => {
     .then ((data) => {
         console.log(data)
         setFavoriteMovies(data.FavoriteMovies);
-      localStorage.setItem("user", JSON.stringify(data))
-      alert("Movie added to favorites!")
-      window.location.reload();
+        //alert("Gonna modify the LS")
+        localStorage.setItem("user", JSON.stringify(data))
+        alert("Movie added to favorites!")
+        window.location.reload(); // Todo: Instead of manually reloading it to reflect the change, use state so react will react to the state change.
     }).catch((error) => {
       console.log("Error. Please try again.", error);
     })
