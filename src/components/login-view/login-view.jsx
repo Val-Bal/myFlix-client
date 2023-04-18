@@ -34,7 +34,7 @@ import Form from "react-bootstrap/Form";
     }
    })
    .catch((e) => {
-     alert("Something went worng. Please try again.");
+     alert("Something went wrong. Please try again.");
    });
  }
 
