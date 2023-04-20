@@ -9,10 +9,10 @@ This project involves building the client-side of an app called IndieFlix based 
 - Returns all movies to the user with an image, title, and description
 - Filtering the list of movies with a search feature
 - Ability to select a movie for more details
-- Ability to add a movie to the list of favorites
+- Ability to add and remove a movie from their list of favorites
 - Allows users to log in and register
 - Displays user registration details
-- Allows users to update their information and remove a movie from their list of favorites
+- Allows users to update their information 
 
 # Technology Used
 
@@ -23,13 +23,15 @@ This project involves building the client-side of an app called IndieFlix based 
 
 # Project Dependencies
 
+- Bootstrap 
 - React
-- React-DOM
-- Parcel-bundler
+- React-dom
+- React-router
 - Axios
 - Prop-types
 - React-bootstrap
 - React-router-dom
+- React-scripts
 
 # API Used
 
