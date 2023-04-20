@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Val-Bal/myFlix-client#readme",
   "dependencies": {
+    "axios": "^1.3.6",
     "bootstrap": "^5.2.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
