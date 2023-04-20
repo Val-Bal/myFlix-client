@@ -46835,15 +46835,7 @@ function NavigationBar({ user , onLoggedOut  }) {
 }
 _c = NavigationBar;
 NavigationBar.propTypes = {
-    onLoggedOut: (0, _propTypesDefault.default).func.isRequired,
-    user: (0, _propTypesDefault.default).shape({
-        _id: (0, _propTypesDefault.default).string.isRequired,
-        Username: (0, _propTypesDefault.default).string.isRequired,
-        Password: (0, _propTypesDefault.default).string.isRequired,
-        Email: (0, _propTypesDefault.default).string.isRequired,
-        Birthday: (0, _propTypesDefault.default).string.isRequired,
-        FavoriteMovies: (0, _propTypesDefault.default).array
-    })
+    onLoggedOut: (0, _propTypesDefault.default).func.isRequired
 };
 var _c;
 $RefreshReg$(_c, "NavigationBar");
@@ -47355,39 +47347,25 @@ function SearchBar({ onSearch  }) {
     const [searchInput, setSearchInput] = (0, _react.useState)("");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
         className: "d-flex mb-4",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                className: "ellipsis me-2",
-                "aria-label": "Search",
-                onChange: function(event) {
-                    setSearchInput(event.target.value);
-                    if (!event.target.value) onSearch("");
-                },
-                placeholder: "Discover your next favourite movie! Search by title, director, or genre",
-                type: "search",
-                value: searchInput
-            }, void 0, false, {
-                fileName: "src/components/search-bar/search-bar.jsx",
-                lineNumber: 12,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                className: "btn-secondary",
-                onClick: function(event) {
-                    event.preventDefault();
-                    onSearch(searchInput);
-                },
-                variant: "secondary",
-                children: "Search"
-            }, void 0, false, {
-                fileName: "src/components/search-bar/search-bar.jsx",
-                lineNumber: 25,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+            className: "ellipsis me-2",
+            "aria-label": "Search",
+            onChange: function(event) {
+                setSearchInput(event.target.value);
+                onSearch(searchInput);
+                if (!event.target.value) onSearch("");
+            },
+            placeholder: "Discover your next favourite movie! Search by title, director, or genre",
+            type: "search",
+            value: searchInput
+        }, void 0, false, {
+            fileName: "src/components/search-bar/search-bar.jsx",
+            lineNumber: 11,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "src/components/search-bar/search-bar.jsx",
-        lineNumber: 11,
+        lineNumber: 10,
         columnNumber: 5
     }, this);
 }
