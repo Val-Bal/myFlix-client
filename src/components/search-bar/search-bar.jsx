@@ -6,7 +6,6 @@ import Form from 'react-bootstrap/Form';
 
 function SearchBar({ onSearch }) {
   const [searchInput, setSearchInput] = useState('');
-
   return (
     <Form className="d-flex mb-4">
       <Form.Control
@@ -14,6 +13,7 @@ function SearchBar({ onSearch }) {
         aria-label="Search"
         onChange={function (event) {
           setSearchInput(event.target.value);
+          onSearch(searchInput);
           if (!event.target.value) {
             onSearch('');
           }
@@ -22,16 +22,17 @@ function SearchBar({ onSearch }) {
         type="search"
         value={searchInput}
       />
-      <Button
+      {/* <Button
         className="btn-secondary"
         onClick={function (event) {
           event.preventDefault();
+          console.log(searchInput);
           onSearch(searchInput);
         }}
         variant="secondary"
       >
         Search
-      </Button>
+      </Button> */}
     </Form>
   );
 }
