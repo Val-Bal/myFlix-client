@@ -46,12 +46,12 @@ export { NavigationBar };
 
 NavigationBar.propTypes = {
   onLoggedOut: PropTypes.func.isRequired,
-  user: PropTypes.shape ({
-    _id: PropTypes.string.isRequired,
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.string.isRequired,
-    FavoriteMovies: PropTypes.array,
-  }),
+  // user: PropTypes.shape ({
+  //   _id: PropTypes.string.isRequired,
+  //   Username: PropTypes.string.isRequired,
+  //   Password: PropTypes.string.isRequired,
+  //   Email: PropTypes.string.isRequired,
+  //   Birthday: PropTypes.string.isRequired,
+  //   FavoriteMovies: PropTypes.array,
+  // }),
 };
